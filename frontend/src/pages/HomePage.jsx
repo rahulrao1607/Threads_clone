@@ -41,16 +41,16 @@ const HomePage = () => {
                     <Spinner size={"xl"} />
                 </Flex>
               )}
-              {posts.map((post)=>(
+              {/* {posts.map((post)=>(
                 <Post key={post._id} post={post} postedBy={post.postedBy} />
-              ))}
-              {/* {!loading && Array.isArray(posts) && posts.length > 0 && (
+              ))} */}
+              {!loading && Array.isArray(posts) && posts.length > 0 && (
                 <>
                     {posts.map((post) => (
                         <Post key={post._id} post={post} postedBy={post.postedBy} />
                     ))}
                 </>
-            )} */}
+            )}
         </>         
             
     );
