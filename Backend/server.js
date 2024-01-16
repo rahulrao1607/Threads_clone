@@ -34,22 +34,6 @@ app.use("/api/posts",postRoutes);
 
 
 
-const allowedOrigins = ["http://localhost:3000","https://food-receipe-g6mi.vercel.app"];
-app.use(
-  cors({
-    credentials: true,
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-)
-
-
-
 app.get("/", (req, res) => {
     res.send("Hello, I am here and running!");
   });
