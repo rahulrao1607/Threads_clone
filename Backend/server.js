@@ -34,7 +34,7 @@ app.use("/api/posts",postRoutes);
 
 
 
-const allowedOrigins = ["http://localhost:3000","https://threads-clone-front-9rx4qyjp2-rahulrao1607.vercel.app/"];
+const allowedOrigins = ["http://localhost:3000"];
 app.use(
   cors({
     credentials: true,
