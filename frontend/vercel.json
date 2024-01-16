@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "src/main.jsx",
+        "use": "@vercel/static-build",
+        "config": {}
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "https://threads-clone-nu-nine.vercel.app/api/$1",
+        "methods": ["GET", "POST"]
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/src/main.jsx"
+      }
+    ]
+  }
