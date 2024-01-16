@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
 import {v2 as cloudinary} from "cloudinary";
+import cors from "cors";
 
 dotenv.config();
 
@@ -30,6 +31,28 @@ app.use(cookieParser());
 
 app.use("/api/users",userRoutes);
 app.use("/api/posts",postRoutes);
+
+
+
+const allowedOrigins = ["http://localhost:3000","https://food-receipe-g6mi.vercel.app"];
+app.use(
+  cors({
+    credentials: true,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+)
+
+
+
+app.get("/", (req, res) => {
+    res.send("Hello, I am here and running!");
+  });
 
 app.listen(PORT ,()=>{
     console.log(`server started at port: ${PORT}`);
