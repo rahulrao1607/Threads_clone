@@ -32,22 +32,13 @@ app.use(cookieParser());
 app.use("/api/users",userRoutes);
 app.use("/api/posts",postRoutes);
 
-
-
-const allowedOrigins = ["https://threads-clone-frontend-flax.vercel.app/"];
-app.use(
-  cors({
-    credentials: true,
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-);
-
+app.use(cors(
+    {
+        origin: ["https://threads-clone-frontend-flax.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
 
 app.get("/", (req, res) => {
