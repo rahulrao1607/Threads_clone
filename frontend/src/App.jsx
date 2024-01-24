@@ -4,7 +4,7 @@ import UserPage from "./pages/UserPage"
 import PostPage from "./pages/PostPage"
 import HomePage from "./pages/HomePage"
 import AuthPage from "./pages/AuthPage"
-import Header from "./components/header"
+//import Header from "./components/Header"
 import { useRecoilValue } from "recoil"
 import userAtom from "./atoms/userAtom"
 import UpdateProfilePage from "./pages/UpdateProfilePage"
@@ -19,7 +19,7 @@ import CreatePost from "./components/CreatePost"
 
     return (
       <Container maxW="620px">
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={user ? <HomePage/> : <Navigate to="/auth" />} />
           <Route path="/auth" element={!user ? <AuthPage/> :<Navigate to="/" /> } />
