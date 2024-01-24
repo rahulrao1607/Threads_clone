@@ -34,7 +34,7 @@ app.use("/api/posts",postRoutes);
 
 
 
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["https://threads-clone-frontend-flax.vercel.app/"];
 app.use(
   cors({
     credentials: true,
